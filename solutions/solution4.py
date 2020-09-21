@@ -12,18 +12,12 @@ Q)  A palindromic number reads the same both ways. The largest palindrome made f
 from utils import timing_decorator, check_palindrome
 import numpy as np
 
-def pair_generator(maxN, minN):
-    for i in reversed(range(minN,maxN+1)):
-        for j in reversed(range(minN,maxN+1)):
-            yield i,j
-
 @timing_decorator
 def find_Lpal(N=3):
     maxN = 10**N-1
     minN = 10**(N-1)
     max_product = 0
     palin_list = []
-    pair_gen = pair_generator(maxN, minN)
 
     for i in reversed(range(minN,maxN+1)):
         for j in reversed(range(minN,maxN+1)):

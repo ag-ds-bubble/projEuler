@@ -27,3 +27,21 @@ def eratosthenes_primegen():
 
 def check_palindrome(num):
     return str(num) == str(num)[::-1]
+
+def find_factors(num):
+    curr_num = num
+    factors = [1]
+    i = 2
+    if num==1:
+        return factors
+    while curr_num>1:
+        # print(curr_num, i)
+        if curr_num%i==0:
+            curr_num = curr_num/i
+            factors.append(i)
+            i = 2
+        else:
+            i+=1
+
+    return factors
+
