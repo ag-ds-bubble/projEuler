@@ -1,5 +1,5 @@
 # projEuler
-Solutions to Peoject Eulers Problems
+Solutions to Project Eulers Problems
 
 
 ## Time Taken (Python)
