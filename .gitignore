@@ -3,5 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+
+research_material/
+
 # Environments
 projEuler_venv/

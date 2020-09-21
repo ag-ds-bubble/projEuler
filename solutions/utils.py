@@ -9,3 +9,17 @@ def timing_decorator(func):
         print(f'Total time taken : {np.round((t2-t1)/1e9, 3)} secs' )
         return res, func.__name__
     return wrapper
+
+
+def eratosthenes_primegen():
+    D={}
+    p=2
+    while True:
+        if p not in D:
+            yield p
+            D[p*p] = [p]
+        else:
+            for q in D[p]:
+                D.setdefault(p+q,[]).append(q)
+            del D[p]
+        p+=1
