@@ -6,7 +6,7 @@ def timing_decorator(func):
         t1 = time.perf_counter_ns()
         res = func(*arg, **kw)
         t2 = time.perf_counter_ns()
-        print(f'Total time taken : {np.round((t2-t1)/1e9, 3)} secs' )
+        print(f'Total time taken : {np.round((t2-t1)/1e6, 3)} ms' )
         return res, func.__name__
     return wrapper
 
