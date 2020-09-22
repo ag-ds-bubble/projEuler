@@ -43,16 +43,21 @@ def adj_maxprod(numtxt, adj=13):
 
     # Prune the string
     i=0
+    lastpidx=0
     temp=[]
     while i<len(numtxt):
-        pruned_txt+=numtxt[i]
         if numtxt[i]=='0':
-            pruned_txt = pruned_txt[:-13]
-            temp.append(pruned_txt)
+            print(numtxt[lastpidx:i])
+            temp.append(numtxt[lastpidx:i])
             pruned_txt=''
-            i += 12
+            lastpidx=i+1
+            # if len(temp) >1:
+            #     print(temp)
+            #     break
+
         i+=1
     pruned_txt = [k for k in temp if len(k)>13]
+    print(pruned_txt)
     selected_slice = ''
     for each_slice in pruned_txt:
         idx=0
@@ -66,7 +71,6 @@ def adj_maxprod(numtxt, adj=13):
                 selected_slice = _slice
             idx+=1
     print('Maximum Gouping : ', selected_slice)
-
 
 num_txt = "73167176531330624919225119674426574742355349194934\
 96983520312774506326239578318016984801869478851843\
