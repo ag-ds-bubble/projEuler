@@ -10,7 +10,6 @@ def timing_decorator(func):
         return res, func.__name__
     return wrapper
 
-
 def eratosthenes_primegen():
     D={}
     p=2
@@ -23,7 +22,6 @@ def eratosthenes_primegen():
                 D.setdefault(p+q,[]).append(q)
             del D[p]
         p+=1
-
 
 def check_palindrome(num):
     return str(num) == str(num)[::-1]
