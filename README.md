@@ -16,6 +16,9 @@ Solutions to Project Eulers Problems
 * [Solution 11] >> 102.796 ms
 * [Solution 12] >> 4478.003 ms
 * [Solution 13] >> 0.906 ms
+* [Solution 14] >> 63443.706 ms #Taking way too long
+* [Solution 15] >> 0.229 ms
+* [Solution 16] >> 0.269 ms
 
 
 

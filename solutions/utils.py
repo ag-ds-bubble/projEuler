@@ -1,5 +1,17 @@
 import time
 import numpy as np
+from math import factorial
+
+SUPERSCRIPT_MAP = {'1' : '¹',
+                   '2' : '²',
+                   '3' : '³',
+                   '4' : '⁴',
+                   '5' : '⁵',
+                   '6' : '⁶',
+                   '7' : '⁷',
+                   '8' : '⁸',
+                   '9' : '⁹',
+                   '0' : '⁰'}
 
 def timing_decorator(func):
     def wrapper(*arg, **kw):
@@ -52,3 +64,7 @@ def find_divisors(num):
                 large_divisors.append(int(num / i))
     for divisor in reversed(large_divisors):
         yield divisor
+
+def get_factorial(num):
+    return factorial(num)
+
