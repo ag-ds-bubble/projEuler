@@ -45,32 +45,25 @@ def adj_maxprod(numtxt, adj=13):
     i=0
     lastpidx=0
     temp=[]
-    while i<len(numtxt):
-        if numtxt[i]=='0':
-            print(numtxt[lastpidx:i])
-            temp.append(numtxt[lastpidx:i])
-            pruned_txt=''
-            lastpidx=i+1
-            # if len(temp) >1:
-            #     print(temp)
-            #     break
+    max_adjdig=''
+    numtxt = numtxt.split('0')
+    pruned_txt = [k for k in numtxt if len(k)>=adj]
 
-        i+=1
-    pruned_txt = [k for k in temp if len(k)>13]
-    print(pruned_txt)
     selected_slice = ''
     for each_slice in pruned_txt:
         idx=0
-        last_idx = len(each_slice)-adj
-
-        while idx<=last_idx:
-            _slice = each_slice[idx:idx+adj]
-            prod = np.prod([int(k) for k in list(_slice)])
-            if prod>max_product:
-                max_product=prod
-                selected_slice = _slice
+        selected_slice = each_slice[idx:idx+adj]
+        while len(selected_slice) == adj:
+            selected_slice = each_slice[idx:idx+adj]
+            if len(selected_slice)==adj:
+                prod = np.prod([int(k) for k in list(selected_slice)])
+                if prod>max_product:
+                    max_product = prod
+                    max_adjdig = selected_slice
             idx+=1
-    print('Maximum Gouping : ', selected_slice)
+
+    print('Maximum Gouping : ', max_adjdig)
+    print('Maximum Product : ', max_product)
 
 num_txt = "73167176531330624919225119674426574742355349194934\
 96983520312774506326239578318016984801869478851843\
@@ -93,4 +86,4 @@ num_txt = "73167176531330624919225119674426574742355349194934\
 05886116467109405077541002256983155200055935729725\
 71636269561882670428252483600823257530420752963450"
 
-adj_maxprod(num_txt)
+adj_maxprod(num_txt,13)

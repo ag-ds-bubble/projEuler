@@ -43,3 +43,12 @@ def find_factors(num):
 
     return factors
 
+def find_divisors(num):
+    large_divisors = []
+    for i in range(1, int(np.sqrt(num) + 1)):
+        if num % i == 0:
+            yield i
+            if i*i != num:
+                large_divisors.append(int(num / i))
+    for divisor in reversed(large_divisors):
+        yield divisor
