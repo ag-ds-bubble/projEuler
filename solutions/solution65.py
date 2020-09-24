@@ -51,4 +51,8 @@ def sum_wordlenv2(num_pyr):
 num_pyramid  = "".join([re.sub('\n', ',', k) for k in list(open('raw_data/p067_triangle.txt', 'r'))])[:-1]
 num_pyr = prep_pyramid(num_pyramid)
 
+import time
+start = time.perf_counter_ns()
 print(sum_wordlenv2(num_pyr))
+print((time.perf_counter_ns()-start)/1e6)
+
