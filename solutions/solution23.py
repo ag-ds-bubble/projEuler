@@ -23,21 +23,24 @@ import numpy as np
 
 @timing_decorator
 def non_abundantsums(N=28123):
+    
     abundant_nos = []
-    for i in range(1,N):
-        divisor_sum1 = sum([k for k in list(find_divisors(i)) if k!= i])
-        if divisor_sum1 > i:
-            abundant_nos.append(i)
-
+    _non_abundantsums = 0
     abundant_pairsums = []
+
+    for i in range(1,N+1):
+        divisor_sum = sum([k for k in list(find_divisors(i)) if k!=i])
+        if divisor_sum > i:
+            abundant_nos.append(i)
+    abundant_nos = set(abundant_nos)
+
     for i in abundant_nos:
         for j in abundant_nos:
-            if i!=j:
-                _sum = i+j
-                if _sum<N:
-                    abundant_pairsums.append(_sum)
-
-    _non_abundantsums = int(0.5*(N)*(N+1)) - sum(list(set(abundant_pairsums)))
+            _sum = i+j
+            if _sum<=N:
+                abundant_pairsums.append(_sum)
+    
+    _non_abundantsums = int(0.5*(N+1)*(N)) - sum(list(set(abundant_pairsums)))
     print(f'Sum of the all Non-abundant sums below {N} = ', _non_abundantsums)
 
 non_abundantsums()
