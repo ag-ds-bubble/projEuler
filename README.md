@@ -5,7 +5,7 @@ Solutions to Project Eulers Problems
 ## Results (Python)
 
 |    S.no   |  Time Taken (ms) |      Problem Statement      |
-|:---------:|:----------------:|:----------------:|
+|:---------:|:----------------:|:----------------------------|
 |      1    |    000000.466    |     Multiples of 3 and 5    |
 |      2    |    000000.785    |     Even Fibonacci numbers    |
 |      3    |    000008.782    |     Largest prime factor    |
