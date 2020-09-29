@@ -34,7 +34,7 @@ def weekday_count(fromdate='01-01-1901', todate='31-12-2000'):
     if ndate.day == 1:
         day = calendar.day_name[ndate.weekday()]
         week[day] = week[day] + 1 if day in week else 1
-  return week
+  print('Number of sundays : ', week['Sunday'])
 
-print(weekday_count())
+weekday_count()
 

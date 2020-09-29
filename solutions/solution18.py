@@ -91,7 +91,7 @@ num_pyramid = "75,\
 
 num_pyr = prep_pyramid(num_pyramid)
 
-import time
-start = time.perf_counter_ns()
-print(sum_wordlenv2(num_pyr))
-print((time.perf_counter_ns()-start)/1e6)
+@timing_decorator
+def find_maxs():
+    print('Maximum Path Sum : ', sum_wordlenv2(num_pyr))
+find_maxs()

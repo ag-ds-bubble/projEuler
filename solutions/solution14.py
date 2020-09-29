@@ -50,7 +50,6 @@ def logest_collatz(N=1e6):
         if curr_clen>clen:
             cno = i
             clen=curr_clen
-            print(cno, clen)
     print(f'Starting number with longest collatz chain under < {N} is {cno}, with chain length of {clen}')
 
 logest_collatz()

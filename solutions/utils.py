@@ -1,6 +1,7 @@
 import time
 import numpy as np
 from math import factorial
+import itertools
 
 SUPERSCRIPT_MAP = {'1' : '¹',
                    '2' : '²',
@@ -18,7 +19,8 @@ def timing_decorator(func):
         t1 = time.perf_counter_ns()
         res = func(*arg, **kw)
         t2 = time.perf_counter_ns()
-        print(f'Total time taken : {np.round((t2-t1)/1e6, 3)} ms' )
+        ttaken = str(np.round((t2-t1)/1e6, 3)).zfill(10)
+        print(f'Total time taken : {ttaken} ms' )
         return res, func.__name__
     return wrapper
 
@@ -67,4 +69,22 @@ def find_divisors(num):
 
 def get_factorial(num):
     return factorial(num)
+
+def fibbonaci_gen():
+    fibbonaci_list = [0,1]
+    while True:
+        yield fibbonaci_list[-1]
+        fibbonaci_list.append(fibbonaci_list[-1]+fibbonaci_list[-2])
+
+def is_prime(num):
+    for i in range(2,int(num**0.5)):
+        if num%i==0:
+            return False
+    return True
+
+def get_digit_permutations(num):
+    temp = list(itertools.permutations([int(k) for k in list(str(num))]))
+    all_perms = [int("".join([str(j) for j in k])) for k in temp]
+    return all_perms
+
 
