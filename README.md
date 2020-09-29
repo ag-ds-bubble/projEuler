@@ -70,9 +70,9 @@ Solutions to Project Eulers Problems
 |     62    |    ----------    |     Cubic permutations    |
 |     63    |    ----------    |     Powerful digit counts    |
 |     64    |    ----------    |     Odd period square roots    |
-|     65    |    000040.012    |     Convergents of e    |
+|     65    |    ----------    |     Convergents of e    |
 |     66    |    ----------    |     Diophantine equation    |
-|     67    |    ----------    |     Convergents of e    |
+|     67    |    000040.012    |     Maximum path sum II   |
 |     91    |    ----------    |     Right triangles with integer coordinates    |
 |    138    |    ----------    |     Special isosceles triangles    |
 |    235    |    ----------    |     An Arithmetic Geometric sequence    |
